@@ -91,5 +91,24 @@ with col_left:
         st.markdown(f'<p style="text-align:right;"><strong>{int(progress*100)}%</strong></p>',
         unsafe_allow_html=True)
 
+    # 시간 표시
+    st.markdown("""
+    <style>
+    /* 버튼 컨테이너 가운데 정렬 */
+    .stColumns > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    st.markdown(f"""
+    <div class="timer-time" style="text-align: center; font-size: 4rem; font-weight: bold; margin: 2rem 0;">
+        {st.session_state.remaining_seconds}
+    </div>
+    """, unsafe_allow_html=True)
+
+
 with col_right:
     pass
