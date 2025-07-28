@@ -88,7 +88,7 @@ with col_left:
         else:
             st.markdown('**타이머**',help="타이머가 대기중입니다!") 
     with status_col3:
-        st.markdown(f'<p style="text-aligin:right;"><strong>{int(progress*100)}%</strong></p>',
+        st.markdown(f'<p style="text-align:right;"><strong>{int(progress*100)}%</strong></p>',
         unsafe_allow_html=True)
 
 with col_right:
