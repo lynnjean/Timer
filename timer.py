@@ -63,6 +63,12 @@ def get_timer_status():
     else:
         return "stopped"
 
+def format_time(second):
+    hours = second//3600 # 몫
+    minutes = (second%3600)//60 # 나머지 
+    seconds = second%60 # 나머지 
+    return f"{hours:02d}:{minutes:02d}:{seconds:02d}" #00:00:00
+
 update_timer()
 current_status=get_timer_status()
 
@@ -105,7 +111,7 @@ with col_left:
 
     st.markdown(f"""
     <div class="timer-time" style="text-align: center; font-size: 4rem; font-weight: bold; margin: 2rem 0;">
-        {st.session_state.remaining_seconds}
+        {format_time(st.session_state.remaining_seconds)}
     </div>
     """, unsafe_allow_html=True)
 
