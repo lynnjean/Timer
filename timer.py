@@ -68,8 +68,7 @@ col_left, col_right = st.columns(2)
 
 with col_left:
     if st.session_state.total_seconds>0:
-        progress = st.session_state.remaining_seconds
-        /st.session_state.total_seconds
+        progress = st.session_state.remaining_seconds/st.session_state.total_seconds
         progress = max(0,min(1,progress)) # 0-1 사이값만 출력되도록 설정
     else:
         progress=0 
