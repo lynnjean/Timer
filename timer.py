@@ -170,7 +170,7 @@ with col_left:
 
     with btn1:
         if not st.session_state.timer_running and not st.session_state.timer_paused:
-            if st.button("▶️", help="시작",type="primary"):
+            if st.button("▶️", help="시작",type="primary",use_container_width=True):
                 st.session_state.timer_running=True
                 st.session_state.start_time=time.time() # 현재 시각 저장
                 st.session_state.total_pause_time=0
@@ -178,13 +178,13 @@ with col_left:
                 st.success("타이머가 시작되었습니다!")
                 st.rerun()
         elif st.session_state.timer_running and not st.session_state.timer_paused:
-            if st.button("⏸️", help="일시정지",type="primary"):
+            if st.button("⏸️", help="일시정지",type="primary",use_container_width=True):
                 st.session_state.timer_paused=True
                 st.session_state.pause_start_time = time.time()
                 st.info("타이머가 일시정지되었습니다.")
                 st.rerun()
         elif st.session_state.timer_paused:
-            if st.button("▶️", help="재개",type="primary"):
+            if st.button("▶️", help="재개",type="primary",use_container_width=True):
                 st.session_state.timer_paused=False
                 if st.session_state.pause_start_time:
                     pause_duration = time.time()-st.session_state.pause_start_time
@@ -193,7 +193,7 @@ with col_left:
                 st.success("타이머가 재개되었습니다!")
                 st.rerun()
     with btn2:
-        if st.button("🔁", help="리셋"):
+        if st.button("🔁", help="리셋",use_container_width=True):
             st.session_state.timer_running=False
             st.session_state.timer_paused=False
             st.session_state.start_time=None
@@ -206,7 +206,7 @@ with col_left:
             st.info('타이머가 리셋되었습니다.')         
             st.rerun()
     with btn3:
-        if st.button("1분 추가", help="1분 추가"):
+        if st.button("1분 추가", help="1분 추가",use_container_width=True):
             st.session_state.remaining_seconds+=60
             st.session_state.total_seconds+=60
             if st.session_state.timer_completed:
