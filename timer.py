@@ -27,13 +27,13 @@ if 'start_time' not in st.session_state:
 if 'total_pause_time' not in st.session_state:
     st.session_state.total_pause_time=0
 if 'total_seconds' not in st.session_state:
-    st.session_state.total_seconds=70
+    st.session_state.total_seconds=5
 if 'timer_completed' not in st.session_state:
     st.session_state.timer_completed=False
 if 'show_celebration' not in st.session_state:
     st.session_state.show_celebration=False
 if 'remaining_seconds' not in st.session_state:
-    st.session_state.remaining_seconds=70
+    st.session_state.remaining_seconds=5
 if 'pause_start_time' not in st.session_state:
     st.session_state.pause_start_time=None
 if 'select_music' not in st.session_state:
